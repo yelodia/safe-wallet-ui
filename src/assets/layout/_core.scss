@@ -1,0 +1,77 @@
+html {
+    height: 100%;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+    background-color: var(--surface-ground);
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 500px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.layout-wrapper {
+    min-height: 100vh;
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+        radial-gradient(77.36% 256.97% at 77.36% 57.52%, rgb(238, 239, 175) 0%, rgb(195, 227, 250) 100%);
+}
+
+.app-dark .empty-state {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+        radial-gradient(77.36% 256.97% at 77.36% 57.52%, rgb(75, 75, 55) 0%, rgb(40, 65, 90) 100%);
+}
+
+.block-link {
+    cursor: pointer;
+}
+
+.block-link:hover, .block-link.active {
+    background-color: var(--p-tag-primary-background);
+}
+
+.p-floatlabel:has(input:focus) label, .p-floatlabel:has(input.p-filled) label, .p-floatlabel:has(input:-webkit-autofill) label, .p-floatlabel:has(textarea:focus) label, .p-floatlabel:has(textarea.p-filled) label, .p-floatlabel:has(.p-inputwrapper-focus) label, .p-floatlabel:has(.p-inputwrapper-filled) label, .p-floatlabel:has(input[placeholder]) label, .p-floatlabel:has(textarea[placeholder]) label {
+    left: 0
+}
+
+.p-message-content {
+    align-items: flex-start !important;
+}
+
+.p-message-icon {
+    transform: translateY(2px);
+}
+
+.p-message-text {
+    flex: auto;
+}
+
+.p-step, .p-steppanels {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.p-button {
+    outline: none !important;
+}
+
+.bg-contrast {
+    background-color: var(--p-button-contrast-background);
+}
