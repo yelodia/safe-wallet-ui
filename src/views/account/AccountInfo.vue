@@ -80,7 +80,7 @@ watch( isDeploying, (newValue) => {
                 <h4>Owners</h4>
                 <div v-for="(owner, index) in predictedSafe?.safeAccountConfig?.owners" :key="index">
                     <div class="flex items-center gap-2 my-2">
-                        <Avatar :image="blo(owner)" shape="circle" />
+                        <Avatar :image="blo(owner || '0x')" shape="circle" />
                         <span class="font-mono">{{ owner }}</span>
                         <CopyButton :value="owner" />
                     </div>

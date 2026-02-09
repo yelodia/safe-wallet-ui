@@ -54,7 +54,7 @@ const handleDelete = () => {
 
     <div class="flex gap-2 items-center block-link p-2 rounded-lg">
         <router-link :to="`/account/${account.address}`" class="flex items-center gap-4">
-            <Avatar :image="blo(account.address)" shape="circle" size="large" />
+            <Avatar :image="blo(account.address || '0x')" shape="circle" size="large" />
             <span class="font-mono mr-10">{{ formattedAddress }}</span>
             <Tag severity="success" :value="thresholdBadge" rounded></Tag>
         </router-link>

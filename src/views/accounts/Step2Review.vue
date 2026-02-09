@@ -131,7 +131,7 @@ watch(
         <template #content>
             <h3>Review Safe Account</h3>
             <div class="flex items-center gap-4 mb-8" v-if="computedAddress">
-                <Avatar :image="blo(computedAddress)" shape="circle" size="large" />
+                <Avatar :image="blo(computedAddress || '0x')" shape="circle" size="large" />
                 <span class="text-sm sm:text-base font-mono">{{ computedAddress }}</span>
                 <CopyButton :value="computedAddress" />
             </div>

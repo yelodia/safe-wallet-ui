@@ -93,7 +93,7 @@ const handleSwitchChain = async () => {
         <Popover ref="popoverRef">
             <div class="p-2" v-if="walletStore.isConnected">
                 <div class="flex gap-3 items-center">
-                    <Avatar :image="blo(walletStore.walletAddress)" shape="circle"  />
+                    <Avatar :image="blo(walletStore.walletAddress || '0x')" shape="circle"  />
                     <span>
                         {{ formatAddress(walletStore.walletAddress) }}
                     </span>

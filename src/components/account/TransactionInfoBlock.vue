@@ -79,7 +79,7 @@ const formatInputValue = (value) => {
             on 
         </div>
         <div class="inline-flex items-center gap-3 align-middle mb-1">
-            <Avatar :image="blo(safeTx.data.to)" shape="circle" />
+            <Avatar :image="blo(safeTx.data.to || '0x')" shape="circle" />
             <span class="font-mono">{{ formatAddress(safeTx.data.to) }}</span>
             <CopyButton :value="safeTx.data.to" />
         </div>
@@ -94,7 +94,7 @@ const formatInputValue = (value) => {
             <span class="text-muted-color">({{ input.type }}):</span>
         </div>
         <div class="flex items-center gap-2">
-            <Avatar :image="blo(input.value)" shape="circle" v-if="input.type === 'address'" />
+            <Avatar :image="blo(input.value || '0x')" shape="circle" v-if="input.type === 'address'" />
             <span class="break-all font-mono text-sm">
                 {{ formatInputValue(input.value) }}
             </span>

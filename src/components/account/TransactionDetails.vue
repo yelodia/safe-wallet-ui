@@ -79,11 +79,6 @@ const isRejectDisabled = computed(() => {
     return !props.isLastGroup;
 });
 
-const getAddressIcon = (address) => {
-    if (!address) return null;
-    return blo(address);
-};
-
 async function handleRevokeSign() {
     if (!currentWalletFile.value) return;
 
@@ -151,7 +146,7 @@ async function handleReject() {
         <div class="w-70 p-6 pt-0 md:pl-0 md:pt-6">
             <div class="font-bold text-lg mb-2">Creator</div>
             <div class="flex items-center gap-2">
-                <Avatar :image="blo(creatorAddress)" shape="circle" />
+                <Avatar :image="blo(creatorAddress || '0x')" shape="circle" />
                 <span class="font-mono">{{ formatAddress(creatorAddress) }}</span>
                 <CopyButton :value="creatorAddress" class="ml-auto" />
             </div>
@@ -161,7 +156,7 @@ async function handleReject() {
                 :key="file.id"
                 class="flex items-center gap-2 my-1"
                         >
-                <Avatar :image="blo(file.keyvalues?.signer) || '0x'" shape="circle" />
+                <Avatar :image="blo(file.keyvalues?.signer || '0x')" shape="circle" />
                 <span class="font-mono">{{ formatAddress(file.keyvalues?.signer) }}</span>
                 <CopyButton :value="file.keyvalues?.signer" class="ml-auto" />
             </div>
