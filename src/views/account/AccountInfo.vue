@@ -59,7 +59,7 @@ async function handleDeploy() {
 }
 
 const canDeploy = computed(() => {
-    return walletStore.isConnected && !isChainMismatch.value && !isDeploying.value;
+    return walletStore.isConnected && !isChainMismatch.value;
 });
 
 watch( isDeploying, (newValue) => {
@@ -125,6 +125,7 @@ watch( isDeploying, (newValue) => {
                     label="Deploy Contract"
                     icon="pi pi-send"
                     :loading="isDeploying"
+                    :disabled="isDeploying"
                     v-if="canDeploy"
                     @click="handleDeploy"
                 />

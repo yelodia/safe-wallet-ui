@@ -57,6 +57,7 @@ async function initializeAccount() {
 
 function handleTransactionSuccess(event) {
     if (event.name === 'contract_deploy') {
+        const address = route.params.address;
         isDeployed.value = true;
         eventBus.emit(EVENTS.CONTRACT_DEPLOYED, { address, deployed: true });
     }
