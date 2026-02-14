@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vitest/config';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +20,9 @@ export default defineConfig({
         tailwindcss(),
         Components({
             resolvers: [PrimeVueResolver()]
+        }),
+        nodePolyfills({
+            protocolImports: true,
         })
     ],
     resolve: {

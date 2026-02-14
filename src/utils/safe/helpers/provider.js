@@ -1,5 +1,6 @@
 import { createPublicClient, http } from 'viem';
 import { getChainById, getViemChain } from '@/utils/chains';
+import { CHAINS } from '@/config/chains';
 
 /**
  * Извлекает chainId из провайдера без RPC запросов (где возможно)
@@ -14,8 +15,7 @@ export async function getChainIdFromProvider(provider) {
   // Если провайдер - строка (RPC URL)
   if (typeof provider === 'string') {
     // Ищем в конфиге CHAINS по rpcUrl (синхронно, без RPC)
-    const chains = await import('@/config/chains');
-    const chain = chains.CHAINS.find(c => c.rpcUrl === provider);
+    const chain = CHAINS.find(c => c.rpcUrl === provider);
     return chain ? chain.chainId : null;
   }
 

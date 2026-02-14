@@ -1,0 +1,4 @@
+name = "safe-ui"
+
+[site]
+bucket = "./dist"

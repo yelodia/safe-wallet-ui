@@ -86,15 +86,15 @@ const handleNext = () => {
                     @blur="toggleEditing(false)"
                     @keyup.enter="toggleEditing(false)"
                 />
-                <Button
-                    v-if="index > 0"
-                    icon="pi pi-times"
-                    class="mt-8"
-                    severity="danger"
-                    outlined
-                    @click="remove(index)"
-                    :aria-label="'Remove owner ' + (index + 1)"
-                />
+                <div class="mt-8" v-if="index > 0">
+                    <Button
+                        icon="pi pi-times"
+                        severity="danger"
+                        outlined
+                        @click="remove(index)"
+                        :aria-label="'Remove owner ' + (index + 1)"
+                    />
+                </div>
             </div>
 
             <Button
