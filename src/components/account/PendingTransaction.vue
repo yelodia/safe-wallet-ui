@@ -286,7 +286,7 @@ async function handleExecute() {
                         :disabled="!canConfirm"
                         :loading="isSigning"
                         @click.stop="handleConfirm"
-                        v-tooltip="!canConfirm ? confirmTooltip : ''"
+                        v-tooltip.top="!canConfirm ? confirmTooltip : ''"
                     />
                 
                     <Button
@@ -295,7 +295,7 @@ async function handleExecute() {
                         :disabled="!canExecute"
                         :loading="isSigning"
                         @click.stop="handleExecute"
-                        v-tooltip="!canExecute ? executeTooltip : ''"
+                        v-tooltip.top="!canExecute ? executeTooltip : ''"
                     />
 
                     <i class="ml-3 text-muted-color" :class="iconClass" />

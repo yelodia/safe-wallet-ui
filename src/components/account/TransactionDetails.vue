@@ -179,7 +179,7 @@ async function handleReject() {
                     :loading="isRejecting"
                     class="w-full"
                     @click="handleReject"
-                    v-tooltip="isRejectDisabled ? 'Only the last transaction in the queue can be deleted' : ''"
+                    v-tooltip.top="isRejectDisabled ? 'Only the last transaction in the queue can be deleted' : ''"
                 />
             </div>
 

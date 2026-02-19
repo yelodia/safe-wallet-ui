@@ -16,7 +16,7 @@ const publicClientStore = usePublicClientStore();
 const predictedSafe = ref(null);
 const isEditing = ref(false);
 
-const { errors, values, resetForm, defineField, validateField } = useForm({
+const { errors, meta, resetForm, defineField, validateField } = useForm({
     initialValues: {
         address: '',
         txHash: ''
@@ -80,6 +80,8 @@ const canShowAccountInfo = computed(() =>
     !isEditing.value
 );
 
+const isFormValidating = computed(() => meta.validating);
+
 const handleAddAccount = () => {
     const account = predictedSafe.value.safeAccountConfig;
     const deploy = predictedSafe.value.safeDeploymentConfig;
@@ -133,7 +135,7 @@ watch(() => settingsStore.currentAppChainId, () => {
                         <Button
                             label="Add"
                             :disabled="!canShowAccountInfo || !predictedSafe"
-                            :loading="!canShowAccountInfo && !!values.txHash && !errors.txHash"
+                            :loading="isFormValidating"
                             icon="pi pi-check"
                             @click="handleAddAccount"
                         />
