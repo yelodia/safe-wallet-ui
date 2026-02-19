@@ -128,6 +128,25 @@ Transaction signatures are stored in private IPFS Pinata in JSON format. Each si
 - The application does not store signatures on the backend
 - Official audited Gnosis contracts are used
 
+## Comparison
+
+| Parameter | Simple Safe UI | Gnosis toolkit |
+|-----------|----------------|----------------|
+| **Backend** | ✅ Not required | ❌ Required |
+| **Setup** | ✅ Easy | ❌ Complex |
+| **Resources** | ✅ Minimal | ❌ High |
+| **Independent storage** | ✅ Pinata IPFS | ⚠️ Safe DB |
+| **Owner coordination** | ⚠️ Required | ✅ Not required |
+| **Solidity input validation** | ✅ Reliable (viem) | ⚠️ Outdated (web3.js) |
+| **Official contracts** | ✅ Yes | ✅ Yes |
+| **Race condition** | ❌ Risk exists | ✅ Excluded |
+
+**Note on limitations:**
+
+- **Owner coordination**: Wallet owners need to share the Pinata API key to collaborate on transactions. Additionally, when a Safe account is created by one owner, it won't automatically appear for other owners — they must manually add it to their interface.
+
+- **Race condition**: There is a risk of simultaneous transaction execution by multiple owners, which could lead to conflicts or unexpected behavior.
+
 ## Development
 
 ### Running Tests
